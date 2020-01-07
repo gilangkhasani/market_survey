@@ -1,0 +1,111 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Offline Attach Foto</ion-title>
+    <ion-buttons end>
+      <button ion-button small clear color="light" tappable (click)="close()">
+        Close
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-margin margin-top>
+    <form (ngSubmit)="submit()">
+      <ion-card>
+        <ion-card-content>
+          <div>
+            <ion-card-title style="text-align:center;">Surrounding Area (1)</ion-card-title>
+            <div>
+              <button type="button" ion-button block color="primary" (click)="selectOptions(imageSurroundingArea1, 'Surrounding Area 1', 0)">Take a Picture</button>
+              <br>
+              <img [src]="pic_blob[0]" *ngIf="pic_blob[0]" />
+              <ion-input [(ngModel)]="category[0]" name="category" id="category" class="category" type="hidden" placeholder="category"required></ion-input>
+              <ion-input [(ngModel)]="file_name[0]" name="file_name" id="file_name" class="file_name" type="hidden" placeholder="file_name"required></ion-input>
+            </div>
+          </div>
+          <div>
+            <ion-card-title style="text-align:center;">Surrounding Area (2)</ion-card-title>
+            <div>
+              <button type="button" ion-button block color="primary" (click)="selectOptions(imageSurroundingArea2, 'Surrounding Area 2', 1)">Take a Picture</button>
+              <br>
+              <img [src]="pic_blob[1]" *ngIf="pic_blob[1]" />
+              <ion-input [(ngModel)]="category[1]" name="category" id="category" class="category" type="hidden" placeholder="category"required></ion-input>
+              <ion-input [(ngModel)]="file_name[1]" name="file_name" id="file_name" class="file_name" type="hidden" placeholder="file_name"required></ion-input>
+            </div>
+          </div>
+          <div>
+            <ion-card-title style="text-align:center;">Building Available</ion-card-title>
+            <div>
+              <button type="button" ion-button block color="primary" (click)="selectOptions(buildingAvailable, 'Building Available', 2)">Take a Picture</button>
+              <br>
+              <img [src]="pic_blob[2]" *ngIf="pic_blob[2]" />
+              <ion-input [(ngModel)]="category[2]" name="category" id="category" class="category" type="hidden" placeholder="category"required></ion-input>
+              <ion-input [(ngModel)]="file_name[2]" name="file_name" id="file_name" class="file_name" type="hidden" placeholder="file_name"required></ion-input>
+            </div>
+          </div>
+          <div>
+            <ion-card-title style="text-align:center;">Crowded Places</ion-card-title>
+            <div>
+              <button type="button" ion-button block color="primary" (click)="selectOptions(crowdedPlaces, 'Crowded Places', 3)">Take a Picture</button>
+              <br>
+              <img [src]="pic_blob[3]" *ngIf="pic_blob[3]" />
+              <ion-input [(ngModel)]="category[3]" name="category" id="category" class="category" type="hidden" placeholder="category"required></ion-input>
+              <ion-input [(ngModel)]="file_name[3]" name="file_name" id="file_name" class="file_name" type="hidden" placeholder="file_name"required></ion-input>
+            </div>
+          </div>
+          <div>
+            <ion-card-title style="text-align:center;">Land Condition</ion-card-title>
+            <div>
+              <button type="button" ion-button block color="primary" (click)="selectOptions(landCondition, 'Land Condition', 4)">Take a Picture</button>
+              <br>
+              <img [src]="pic_blob[4]" *ngIf="pic_blob[4]" />
+              <ion-input [(ngModel)]="category[4]" name="category" id="category" class="category" type="hidden" placeholder="category"required></ion-input>
+              <ion-input [(ngModel)]="file_name[4]" name="file_name" id="file_name" class="file_name" type="hidden" placeholder="file_name"required></ion-input>
+            </div>
+          </div>
+          <div>
+            <ion-card-title style="text-align:center;">Road Condition</ion-card-title>
+            <div>
+              <button type="button" ion-button block color="primary" (click)="selectOptions(roadCondition, 'Road Condition', 5)">Take a Picture</button>
+              <br>
+              <img [src]="pic_blob[5]" *ngIf="pic_blob[5]" />
+              <ion-input [(ngModel)]="category[5]" name="category" id="category" class="category" type="hidden" placeholder="category"required></ion-input>
+              <ion-input [(ngModel)]="file_name[5]" name="file_name" id="file_name" class="file_name" type="hidden" placeholder="file_name"required></ion-input>
+            </div>
+          </div>
+          <div>
+            <ion-card-title style="text-align:center;">Competitor</ion-card-title>
+            <div>
+              <button type="button" ion-button block color="primary" (click)="selectOptions(competitor, 'Competitor', 6)">Take a Picture</button>
+              <br>
+              <img [src]="pic_blob[6]" *ngIf="pic_blob[6]" />
+              <ion-input [(ngModel)]="category[6]" name="category" id="category" class="category" type="hidden" placeholder="category"required></ion-input>
+              <ion-input [(ngModel)]="file_name[6]" name="file_name" id="file_name" class="file_name" type="hidden" placeholder="file_name"required></ion-input>
+            </div>
+          </div>
+          <div>
+            <ion-card-title style="text-align:center;">Pole PLN Nearby</ion-card-title>
+            <div>
+              <button type="button" ion-button block color="primary" (click)="selectOptions(polePLNNearby, 'Pole PLN Nearby', 7)">Take a Picture</button>
+              <br>
+              <img [src]="pic_blob[7]" *ngIf="pic_blob[7]" />
+              <ion-input [(ngModel)]="category[7]" name="category" id="category" class="category" type="hidden" placeholder="category"required></ion-input>
+              <ion-input [(ngModel)]="file_name[7]" name="file_name" id="file_name" class="file_name" type="hidden" placeholder="file_name"required></ion-input>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <div margin-top padding>
+        <ion-input [(ngModel)]="id_market_survey" name="id_market_survey" id="id_market_survey" class="id_market_survey" type="hidden" placeholder="id_market_survey"required></ion-input>
+        <ion-input [(ngModel)]="token" name="token" id="token" class="token" type="hidden" placeholder="token" required></ion-input>
+        <ion-input [(ngModel)]="id_objective_location" name="id_objective_location" id="id_objective_location" class="id_objective_location" type="hidden" placeholder="id_objective_location" required></ion-input>
+        <ion-input [(ngModel)]="survey_date" name="survey_date" id="survey_date" class="survey_date" type="hidden" placeholder="survey_date" required></ion-input>
+        <ion-input [(ngModel)]="created_by" name="created_by" id="created_by" class="created_by" type="hidden" placeholder="created_by" required></ion-input>
+        <button type="submit" margin-top round ion-button block >Upload</button>
+    </div>
+    </form>
+  </ion-list>
+  <p> {{ errorMessage }} </p>
+</ion-content>

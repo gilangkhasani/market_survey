@@ -1,0 +1,39 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>{{title_page}} </ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="add()" icon-only color="royal">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <ion-content> 
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing...">
+      </ion-refresher-content>
+    </ion-refresher>
+    <ion-list>
+      <ion-item-sliding *ngFor="let x of items; let i = index">
+        <ion-item (click)="showActionSheet(x, i, $event)">
+          <h3>Location : {{ x.street }} {{x.desa_kelurahan}} {{x.kabupaten_kota}}</h3>
+          <p>Survey Date : {{ x.survey_date }}</p>
+          <p>Status : {{ x.status_market_survey_update }}</p>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  
+  </ion-content>
+  

@@ -1,0 +1,218 @@
+<ion-header >
+
+    <ion-navbar color="primary" no-border-bottom>
+      <ion-title>
+        View Detail Offline
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button small clear color="light" tappable (click)="close()">
+          Close
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+    <ion-toolbar no-border-top>
+      <ion-segment [(ngModel)]="market_survey">
+        <ion-segment-button value="data">
+          Market Survey
+        </ion-segment-button>
+        <ion-segment-button value="photo">
+          Photo
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <div [ngSwitch]="market_survey">
+      <ion-list *ngSwitchCase="'data'">
+        <ion-card-content class="location_information" id="location_information">
+          <ion-card-title style="text-align:center;">Location Information</ion-card-title>
+          <ion-item>
+            <ion-label>Objective Location</ion-label>
+            <ion-label>{{formData.objective_location_name}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Region</ion-label>
+            <ion-label>{{formData.region}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Branch</ion-label>
+            <ion-label>{{formData.branch}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Sub Branch</ion-label>
+            <ion-label>{{formData.sub_branch}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Street/ Dusun</ion-label>
+            <ion-label>{{formData.street}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Desa/ Kelurahan</ion-label>
+            <ion-label>{{formData.desa_kelurahan}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Kabupaten Kota</ion-label>
+            <ion-label>{{formData.kabupaten_kota}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Coordinate</ion-label>
+            <ion-label>{{formData.longitude}},{{formData.latitude}} </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Search Radius</ion-label>
+            <ion-label>{{formData.searching_radius}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Land Condition</ion-label>
+            <ion-label>{{formData.land_condition}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Road Condition</ion-label>
+            <ion-label>{{formData.road_condition_name}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Any PLN Pole Nearby</ion-label>
+            <ion-label>{{formData.any_pln_pole_nearby}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>PLN Outage Frequency</ion-label>
+            <ion-label>{{formData.pln_outage_frequency}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Other Information</ion-label>
+            <ion-label>{{formData.other_information}}</ion-label>
+          </ion-item>
+        </ion-card-content>
+
+        <ion-card-content class="location_information" id="location_information">
+          <ion-card-title style="text-align:center;">Market Potency Information</ion-card-title>
+          <ion-item>
+            <ion-label>Growth Domestic Product (GDP)</ion-label>
+            <ion-label>{{formData.growth_domestic_product}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Building Available</ion-label>
+            <ion-label>{{formData.building_available_name}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Crowded Places</ion-label>
+            <ion-label>{{formData.crowded_places}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Nearest Site Revenue/ Month</ion-label>
+            <ion-label>{{formData.nearest_site_revenue_month}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Revenue Prediction/ Month</ion-label>
+            <ion-label>{{formData.revenue_prediction_month}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>KK Population</ion-label>
+            <ion-label>{{formData.kk_population}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Resident Population</ion-label>
+            <ion-label>{{formData.resident_population}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Production Age (%)</ion-label>
+            <ion-label>{{formData.productive_age}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>(%) Plantation</ion-label>
+            <ion-label>{{formData.plantation_job_sector}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>(%) Agriculture</ion-label>
+            <ion-label>{{formData.agricuture_job_sector}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>(%) Employee</ion-label>
+            <ion-label>{{formData.employee_job_sector}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>(%) Fisherman</ion-label>
+            <ion-label>{{formData.fisherman_job_sector}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>(%) Trade</ion-label>
+            <ion-label>{{formData.trade_job_sector}}</ion-label>
+          </ion-item>
+        </ion-card-content>
+
+        <ion-card-content class="location_information" id="location_information">
+          <ion-card-title style="text-align:center;">Cellular Coverage at Surrounding Location</ion-card-title>
+          <ion-item>
+            <ion-label>Telkomsel Signal Quality</ion-label>
+            <ion-label>{{formData.telkomsel_signal_quality}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Strongest Band</ion-label>
+            <ion-label>{{formData.strongest_band}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Cell ID </ion-label>
+            <ion-label>{{formData.cell_id}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Site ID</ion-label>
+            <ion-label>{{formData.site_id}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Speedtest DL</ion-label>
+            <ion-label>{{formData.speed_test_result_dl}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Speedtest UL</ion-label>
+            <ion-label>{{formData.speed_test_result_ul}}</ion-label>
+          </ion-item>
+        </ion-card-content>
+
+        <ion-card-content class="location_information" id="location_information" *ngFor="let x of formData.cellular_coverage_at_surrounding_location; let counter = index">
+            <ion-card-title style="text-align:center;">Competitor Coverage</ion-card-title>
+            <div >
+              <ion-item >
+                <ion-label>{{x.competitor_coverage}}</ion-label>
+                <ion-label>{{x.band_2g == 1 ? '2G': ''}}, {{x.band_3g == 1 ? '3G': ''}}, {{x.band_4g == 1 ? '4G': ''}} </ion-label>
+              </ion-item>
+            </div>
+          </ion-card-content>
+
+        <ion-card-content class="location_information" id="location_information" *ngFor="let x of formData.nearby_site_market_information; let counter = index">
+          <ion-card-title style="text-align:center;">Nearby Site Market Information</ion-card-title>
+          <div >
+            <ion-item >
+              <ion-label>Site Id</ion-label>
+              <ion-label>{{x.site_id_nearby_site_market_information}}</ion-label>
+            </ion-item>
+            <ion-item >
+              <ion-label>Coordinate</ion-label>
+              <ion-label>{{x.longitude_nearby_site_market_information}}, {{x.latitude_nearby_site_market_information}}</ion-label>
+            </ion-item>
+            <ion-item >
+              <ion-label>Distane To NOM</ion-label>
+              <ion-label>{{x.distance_nom}}</ion-label>
+            </ion-item>
+            <ion-item >
+              <ion-label>Owner</ion-label>
+              <ion-label>{{x.owner_name}}</ion-label>
+            </ion-item>
+          </div>
+        </ion-card-content>
+
+      </ion-list>
+  
+      <ion-list *ngSwitchCase="'photo'">
+        <ion-item *ngFor="let x of formData.attach_file; let counter = index">
+          <ion-thumbnail item-start>
+            <img [src]="x.pic_blob">
+          </ion-thumbnail>
+          <h2>{{x.category}}</h2>
+        </ion-item>
+      </ion-list>
+  
+    </div>
+  </ion-content>
+  

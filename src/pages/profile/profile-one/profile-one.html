@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile Page</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div id="profile-bg" [ngStyle]="{'background-image': 'url(' + imageUrl +')'}"></div>
+  <div id="content">
+    <div id="profile-info">
+      <img id="profile-image" [src]="userImage">
+      <h3 id="profile-name">{{users.fullname}}</h3>
+      <span id="profile-description">{{users.subdept}}</span>
+      <p>
+        <button ion-button round (click)="changePassword()" >Change Password</button>
+        <button ion-button round (click)="changeImage()" >Change Image</button>
+      </p>
+    </div>
+  </div>
+</ion-content>

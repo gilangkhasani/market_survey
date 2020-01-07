@@ -1,0 +1,350 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>{{action == 1 ? 'Add' : 'Edit'}} Form {{title_page}}</ion-title>
+      <ion-buttons end>
+        <button ion-button small clear color="light" tappable (click)="close()">
+          Close
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  <ion-list no-margin margin-top>
+    <form (ngSubmit)="submit()">
+      <ion-card id="container0">
+        <div>
+          <ion-card-content #market_survey class="market_survey" id="market_survey">
+          <ion-card-title style="text-align:center;">Location Information</ion-card-title>
+           <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Survey Date</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['survey_date']" name="survey_date"  id="survey_date" class="survey_date" placeholder="Survey Date" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label>Objective Location</ion-label>
+                <ion-select [(ngModel)]="formData['id_objective_location']" name="id_objective_location"  id="id_objective_location" class="id_objective_location" required="required" >
+                  <ion-option *ngFor="let x of forms.id_objective_location; let counter = index" value="{{x.value}}">{{x.title}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label>Region</ion-label>
+                <ion-select [(ngModel)]="formData['region']" name="region"  id="region" class="region" required="required" >
+                  <ion-option *ngFor="let x of forms.region; let counter = index" value="{{x.value}}">{{x.title}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label>Branch</ion-label>
+                <ion-select [(ngModel)]="formData['branch']" name="branch"  id="branch" class="branch" required="required" >
+                  <ion-option *ngFor="let x of forms.branch; let counter = index" value="{{x.value}}">{{x.title}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label>Sub Branch</ion-label>
+                <ion-select [(ngModel)]="formData['sub_branch']" name="sub_branch"  id="sub_branch" class="sub_branch" required="required" >
+                  <ion-option *ngFor="let x of forms.sub_branch; let counter = index" value="{{x.value}}">{{x.title}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Street/ Dusun</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['street']" name="street"  id="sub_branch" class="street" placeholder="Street/ Dusun" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Desa/ Kelurahan</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['desa_kelurahan']" name="desa_kelurahan"  id="desa_kelurahan" class="desa_kelurahan" placeholder="Desa/ Kelurahan" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Kabupaten Kota</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['kabupaten_kota']" name="kabupaten_kota"  id="sub_branch" class="kabupaten_kota" placeholder="Kabupaten Kota" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Longitude</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['longitude']" name="longitude"  id="longitude" class="street" placeholder="Longitude" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Latitude</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['latitude']" name="latitude"  id="latitude" class="street" placeholder="Latitude" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Searching Radius</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['searching_radius']" name="searching_radius"  id="searching_radius" class="street" placeholder="Searching Radius" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Land Condition</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['land_condition']" name="land_condition"  id="land_condition" class="street" placeholder="Land Condition" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label>Road Condition</ion-label>
+                <ion-select [(ngModel)]="formData['id_road_condition']" name="id_road_condition"  id="id_road_condition" class="id_road_condition" required="required" >
+                  <ion-option *ngFor="let x of forms.id_road_condition; let counter = index" value="{{x.value}}">{{x.title}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Any PLN Pole Nearby</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['any_pln_pole_nearby']" name="any_pln_pole_nearby"  id="any_pln_pole_nearby" class="street" placeholder="Any PLN Pole Nearby" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>PLN Outage Frequency</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['pln_outage_frequency']" name="pln_outage_frequency"  id="pln_outage_frequency" class="street" placeholder="Jam/ Hari" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Other Information</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['other_information']" name="other_information"  id="other_information" class="street" placeholder="Daerah Banjir/ Daerah Tambang" required="required"></ion-input>
+              </ion-item>
+            </div>
+          </ion-card-content>
+        </div>
+      </ion-card>
+
+      <ion-card id="container1">
+        <div>
+          <ion-card-content #market_survey class="market_survey" id="market_survey">
+          <ion-card-title style="text-align:center;">Market Potency Information</ion-card-title>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Growth Domestic Product (GDP) *</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['growth_domestic_product']" name="growth_domestic_product"  id="growth_domestic_product" class="growth_domestic_product" placeholder="Growth Domestic Product (GDP) *" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label>Building Available</ion-label>
+                <ion-select [(ngModel)]="formData['id_building_available']" name="id_building_available"  id="id_building_available" class="id_building_available" required="required" >
+                  <ion-option *ngFor="let x of forms.id_building_available; let counter = index" value="{{x.value}}">{{x.title}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Crowded Places</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['crowded_places']" name="crowded_places"  id="crowded_places" class="crowded_places" placeholder="Crowded Places" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Nearest Site Revenue/ Month *</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['nearest_site_revenue_month']" name="nearest_site_revenue_month"  id="nearest_site_revenue_month" class="nearest_site_revenue_month" placeholder="Nearest Site Revenue/ Month *" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Revenue Prediction/ Month</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['revenue_prediction_month']" name="revenue_prediction_month"  id="revenue_prediction_month" class="revenue_prediction_month" placeholder="Revenue Prediction/ Month" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>KK Population</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['kk_population']" name="kk_population"  id="kk_population" class="kk_population" placeholder="KK Population" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Resident Population</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['resident_population']" name="resident_population"  id="resident_population" class="resident_population" placeholder="Resident Population" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Productive Age (%)</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['productive_age']" name="productive_age"  id="productive_age" class="productive_age" placeholder="Productive Age (%)" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Job Sector (%) Plantation</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['plantation_job_sector']" name="plantation_job_sector"  id="plantation_job_sector" class="plantation_job_sector" placeholder="Job Sector (%) Plantation" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Job Sector (%) Agricuture</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['agricuture_job_sector']" name="agricuture_job_sector"  id="agricuture_job_sector" class="agricuture_job_sector" placeholder="Job Sector (%) Agricuture" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Job Sector (%) Employee</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['employee_job_sector']" name="employee_job_sector"  id="employee_job_sector" class="employee_job_sector" placeholder="Job Sector (%) Employee" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Job Sector (%) Fisherman</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['fisherman_job_sector']" name="fisherman_job_sector"  id="fisherman_job_sector" class="fisherman_job_sector" placeholder="Job Sector (%) Fisherman" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Job Sector (%) Trade</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['trade_job_sector']" name="trade_job_sector"  id="trade_job_sector" class="trade_job_sector" placeholder="Job Sector (%) Trade" required="required"></ion-input>
+              </ion-item>
+            </div>
+          </ion-card-content>
+        </div>
+      </ion-card>
+
+      <ion-card id="container2">
+        <div>
+          <ion-card-content #cellular_coverage_at_surrounding_location class="cellular_coverage_at_surrounding_location" id="cellular_coverage_at_surrounding_location">
+          <ion-card-title style="text-align:center;">Cellular Coverage at Surrounding Location</ion-card-title>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label>Telkomsel Signal Quality</ion-label>
+                <ion-select [(ngModel)]="formData['telkomsel_signal_quality']" name="telkomsel_signal_quality"  id="telkomsel_signal_quality" class="telkomsel_signal_quality" required="required" >
+                  <ion-option *ngFor="let x of forms.telkomsel_signal_quality; let counter = index" value="{{x.value}}">{{x.title}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label>Strongest Band</ion-label>
+                <ion-select [(ngModel)]="formData['strongest_band']" name="strongest_band"  id="strongest_band" class="strongest_band" required="required" >
+                  <ion-option *ngFor="let x of forms.strongest_band; let counter = index" value="{{x.value}}">{{x.title}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Cell ID BTS Covering</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['cell_id']" name="cell_id"  id="cell_id" class="cell_id" placeholder="Cell ID BTS Covering" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Site ID BTS Covering</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['site_id']" name="site_id"  id="site_id" class="site_id" placeholder="Site ID BTS Covering" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Speed Test Result Downlink</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['speed_test_result_dl']" name="speed_test_result_dl"  id="speed_test_result_dl" class="speed_test_result_dl" placeholder="Speed Test Result Downlink" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Speed Test Result Uplink</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['speed_test_result_ul']" name="speed_test_result_ul"  id="speed_test_result_ul" class="speed_test_result_ul" placeholder="Speed Test Result Uplink" required="required"></ion-input>
+              </ion-item>
+            </div>
+          </ion-card-content>
+        </div>
+      </ion-card>
+
+      <ion-card id="container3">
+        <div>
+          <ion-card-content #cellular_coverage_at_surrounding_location class="cellular_coverage_at_surrounding_location1" id="cellular_coverage_at_surrounding_location1">
+            <ion-card-title style="text-align:center;">Cellular Coverage at Surrounding Location</ion-card-title>
+            <div *ngFor="let x of formData.cellular_coverage_at_surrounding_location; let counter = index">
+              <div style="padding-left:10px; padding-right:10px;" >
+                <ion-item >
+                  <ion-label>Competitor Coverage</ion-label>
+                  <ion-select [(ngModel)]="formData['cellular_coverage_at_surrounding_location'][counter]['competitor_coverage']" name="competitor_coverage"  id="competitor_coverage" class="competitor_coverage" required="required" >
+                      <ion-option *ngFor="let x2 of forms.competitor_coverage; let counter2 = index" value="{{x2.value}}">{{x2.title}}</ion-option>
+                    </ion-select>
+                </ion-item>
+              </div>
+              <div style="padding-left:10px; padding-right:10px;"  >
+                <ion-item >
+                  <ion-label stacked>Band Competitor Coverage</ion-label>
+                </ion-item>
+                <ion-item >
+                  <ion-label>2G</ion-label>
+                  <ion-checkbox [(ngModel)]="formData['cellular_coverage_at_surrounding_location'][counter]['band_2g']" name="band_2g"  va color="danger"></ion-checkbox>
+                </ion-item>
+                <ion-item >
+                  <ion-label>3G</ion-label>
+                  <ion-checkbox [(ngModel)]="formData['cellular_coverage_at_surrounding_location'][counter]['band_3g']" name="band_3g"  va color="danger"></ion-checkbox>
+                </ion-item>
+                <ion-item >
+                  <ion-label>4G</ion-label>
+                  <ion-checkbox [(ngModel)]="formData['cellular_coverage_at_surrounding_location'][counter]['band_4g']" name="band_4g"  va color="danger"></ion-checkbox>
+                </ion-item>
+              </div>
+            </div>
+          </ion-card-content>
+        </div>
+      </ion-card>
+
+      <ion-card id="container4">
+        <div *ngFor="let x of formData.nearby_site_market_information; let counter = index">
+          <ion-card-content #nearby_site_market_information class="nearby_site_market_information" id="nearby_site_market_information">
+            <ion-card-title style="text-align:center;">Nearby Site Information Location</ion-card-title>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Site ID</ion-label>
+                <ion-input type="text" [(ngModel)]="formData['nearby_site_market_information'][counter]['site_id_nearby_site_market_information']" name="site_id_nearby_site_market_information"  id="site_id_nearby_site_market_information" class="site_id_nearby_site_market_information" placeholder="Site ID" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Longitude</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['nearby_site_market_information'][counter]['longitude_nearby_site_market_information']" name="longitude_nearby_site_market_information"  id="longitude_nearby_site_market_information" class="longitude_nearby_site_market_information" placeholder="Longitude" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Latitude</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['nearby_site_market_information'][counter]['latitude_nearby_site_market_information']" name="latitude_nearby_site_market_information"  id="latitude_nearby_site_market_information" class="latitude_nearby_site_market_information" placeholder="Latitude" required="required"></ion-input>
+              </ion-item>
+            </div>
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label stacked>Distance to NOM</ion-label>
+                <ion-input type="number" [(ngModel)]="formData['nearby_site_market_information'][counter]['distance_nom']" name="distance_nom"  id="distance_nom" class="distance_nom" placeholder="Distance to NOM" required="required"></ion-input>
+              </ion-item>
+            </div>
+            
+            <div style="padding-left:10px; padding-right:10px;" >
+              <ion-item >
+                <ion-label>Owner</ion-label>
+                <ion-select [(ngModel)]="formData['nearby_site_market_information'][counter]['id_owner']" name="id_owner"  id="id_owner" class="id_owner" required="required" >
+                  <ion-option *ngFor="let x of forms.id_owner; let counter = index" value="{{x.value}}">{{x.title}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+          </ion-card-content>
+        </div>
+      </ion-card>
+
+      <div margin-top padding>
+          <ion-input [(ngModel)]="formData.id_market_survey" name="id_market_survey" id="id_market_survey" class="id_market_survey" type="hidden" placeholder="id_market_survey"required></ion-input>
+          <ion-input [(ngModel)]="formData.token" name="token" id="token" class="token" type="hidden" placeholder="token"required></ion-input>
+          <ion-input [(ngModel)]="formData.created_by" name="created_by" id="created_by" class="created_by" type="hidden" placeholder="created_by" required></ion-input>
+          <button type="submit" margin-top round ion-button block >Submit</button>
+      </div>
+    </form>
+  </ion-list>
+</ion-content>
+  

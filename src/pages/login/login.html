@@ -1,0 +1,20 @@
+<ion-content padding class="transparent-header">
+  <ion-header>
+    <ion-navbar>
+    </ion-navbar>
+  </ion-header>
+  <img class="logo" src="assets/img/logo/logo-marvel.png" />
+  <div padding>
+    <form [formGroup]="form" (ngSubmit)="login()" novalidate>
+      <ion-item [class.invalid]="form.get('username').invalid">
+        <ion-input type="text" formControlName="username" [value]="loginForm.username" placeholder="Username" autocomplete="off" required></ion-input>
+      </ion-item>
+      <div padding-left class="error" *ngIf="form.get('username').invalid && (form.get('username').touched || form.get('username').dirty)">Username is required</div>
+      <ion-item [class.invalid]="form.get('password').invalid">
+        <ion-input type="password" formControlName="password" [value]="loginForm.password" placeholder="Password" autocomplete="off" required></ion-input>
+      </ion-item>
+      <div padding-left class="error" *ngIf="form.get('password').invalid && (form.get('password').touched || form.get('password').dirty)">Password is required</div>
+      <button ion-button block outline type="submit" color="light" class="login-button">Login</button>
+  </form>
+  </div>
+</ion-content>

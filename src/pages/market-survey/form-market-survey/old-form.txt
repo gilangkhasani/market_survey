@@ -1,0 +1,73 @@
+<ion-card *ngFor="let x of forms;  let counter = index" id="container{{counter}}">
+        <div *ngFor="let range of createRange(x.count_append); let counterRange = index">
+          <ion-card-content #x.table_id class="{{x.table_id}}" id="{{x.table_id}}">
+
+            <ion-card-title style="text-align:center;">{{x.title}}</ion-card-title>
+              <div *ngFor="let x2 of x.detail; let counter2 = index" >
+                <div *ngIf="!x2.append">
+                  <div style="padding-left:10px; padding-right:10px;" *ngIf="x2.tag == 'input'" >
+                    <ion-item >
+                      <ion-label stacked>{{x2.title}}</ion-label>
+                      <ion-input type="{{x2.type}}" [(ngModel)]="formData[x2.attr]" name="{{x2.attr}}"  id="{{x2.attr}}" class="{{x2.attr}}" placeholder="{{x2.placeholder}}" required="required"></ion-input>
+                    </ion-item>
+                  </div>
+
+                  <div style="padding-left:10px; padding-right:10px;" *ngIf="x2.tag == 'select'" >
+                    <ion-item >
+                      <ion-label >{{x2.title}}</ion-label>
+                      <ion-select [(ngModel)]="formData[x2.attr]" name="{{x2.attr}}"  id="{{x2.attr}}" class="{{x2.attr}}" required="required" >
+                        <ion-option *ngFor="let x3 of x2.element.detail; let counter3 = index" value="{{x3.value}}">{{x3.title}}</ion-option>
+                      </ion-select>
+                    </ion-item>
+                  </div>
+
+                  <div style="padding-left:10px; padding-right:10px;" *ngIf="x2.tag == 'checkbox'"  >
+                    <ion-item>
+                        <ion-label stacked>{{x2.title}}</ion-label>
+                    </ion-item>
+                    <ion-item *ngFor="let x3 of x2.element.detail; let counter3 = index">
+                      <ion-label>{{x3.value}}</ion-label>
+                      <ion-checkbox [(ngModel)]="formData[x2.attr][counter3]" name="{{x2.attr}}"  va color="danger"></ion-checkbox>
+                    </ion-item>
+                  </div>
+                </div>
+                
+                <div *ngIf="x2.append == 1">
+                    
+                    <div style="padding-left:10px; padding-right:10px;" *ngIf="x2.tag == 'input'" >
+                      <ion-item >
+                        <ion-label stacked>{{x2.title}}</ion-label>
+                        <ion-input type="{{x2.type}}" [(ngModel)]="formData[x.table][counterRange][x2.attr]" name="{{x2.attr}}"  id="{{x2.attr}}" class="{{x2.attr}}" placeholder="{{x2.placeholder}}" required="required"></ion-input>
+                      </ion-item>
+                    </div>
+    
+                    <div style="padding-left:10px; padding-right:10px;" *ngIf="x2.tag == 'select'" >
+                      <ion-item >
+                        <ion-label >{{x2.title}}</ion-label>
+                        <ion-select [(ngModel)]="formData[x.table][counterRange][x2.attr]" name="{{x2.attr}}"  id="{{x2.attr}}" class="{{x2.attr}}" required="required"  >
+                          <ion-option *ngFor="let x4 of x2.element.detail; let counter4 = index" value="{{x4.value}}">{{x4.title}}</ion-option>
+                        </ion-select>
+                      </ion-item>
+                    </div>
+                    <div style="padding-left:10px; padding-right:10px;" *ngIf="x2.tag == 'checkbox'"  >
+                      <ion-item *ngIf="x2.title">
+                          <ion-label stacked>{{x2.title}}</ion-label>
+                      </ion-item>
+                      <ion-item >
+                        <ion-label>{{x2.placeholder}}</ion-label>
+                        <ion-checkbox [(ngModel)]="formData[x.table][counterRange][x2.attr]" name="{{x2.attr}}"  va color="danger"></ion-checkbox>
+                      </ion-item>
+                      
+                    </div>
+                </div>
+              </div>
+          </ion-card-content>
+        </div>
+        <!--
+        <div *ngIf="x.append == 1" id="container{{x.table_id}}" ></div>  
+        <div *ngIf="x.append == 1" style="text-align: center;" >
+          <button type="button" margin-top round ion-button (click)="addItem(x.table_id, 'container')"><ion-icon name="md-add"></ion-icon></button>
+          <button type="button" margin-top round ion-button color="danger" (click)="removeItem(x.table_id)"><ion-icon name="md-close"></ion-icon></button>
+        </div>
+        -->
+      </ion-card>

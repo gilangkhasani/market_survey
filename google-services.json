@@ -1,0 +1,109 @@
+{
+  "project_info": {
+    "project_number": "702901799858",
+    "firebase_url": "https://ionic-premium-5bd54.firebaseio.com",
+    "project_id": "ionic-premium-5bd54",
+    "storage_bucket": "ionic-premium-5bd54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702901799858:android:a5c767f632b48a93",
+        "android_client_info": {
+          "package_name": "com.ionicpremium.authy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702901799858-3aa3bkfu70c5nvc3e7nl2tq9jbd2d0f9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ionicpremium.authy",
+            "certificate_hash": "162c044d3ee0d0b680bda1299524199a046160a4"
+          }
+        },
+        {
+          "client_id": "702901799858-qkliesj7v6764fe87slg463rp3252it4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ionicpremium.authy",
+            "certificate_hash": "b540a91d66a7d39d8d2ec3180247292e19d3e165"
+          }
+        },
+        {
+          "client_id": "702901799858-kfd471jmimko5b881ni9g1jh2p9skct9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ionicpremium.authy",
+            "certificate_hash": "27bc749fc00a29b872008f7a137cd27078b4185e"
+          }
+        },
+        {
+          "client_id": "702901799858-uo8j9jm95lqbdan619l0mjhdp7t4tkjb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzDi2UXQLFXR1QjrKYhOrf674UlEBF4KY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "702901799858-uo8j9jm95lqbdan619l0mjhdp7t4tkjb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "702901799858-4b8sueaggl0uf9ans3vjhh5j3edle7l2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ionicpremium.authy"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702901799858:android:667ddcb61e2e055b",
+        "android_client_info": {
+          "package_name": "com.ionicpremium.ionium2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702901799858-uo8j9jm95lqbdan619l0mjhdp7t4tkjb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzDi2UXQLFXR1QjrKYhOrf674UlEBF4KY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

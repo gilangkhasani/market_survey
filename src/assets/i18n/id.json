@@ -1,0 +1,20 @@
+{
+    "BACK_BUTTON_TEXT": "Kembali",
+    "TITLE": "Pengaturan",
+    "MENU": "Menu",
+    "LOGOUT": "Keluar",
+
+    "Home": "Beranda",
+    "Components": "Komponen",
+    "CRUD": "CRUD",
+    "Forms": "Form",
+    "Firebase": "Firebase",
+    "Login": "Masuk",
+    "Side Menu": "Menu Samping",
+    "Miscellaneous": "Miscellaneous",
+    "Native": "Native",
+    "Profile": "Profil",
+    "Slides": "Slides",
+    "Setting": "Pengaturan"
+
+  }
